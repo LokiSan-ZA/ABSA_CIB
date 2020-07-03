@@ -74,32 +74,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="PhoneBookModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PhoneBookModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="PhoneBookModel.edmx.diagram">
       <DependentUpon>PhoneBookModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PhoneBookModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PhoneBookModel.Context.cs</LastGenOutput>
       <DependentUpon>PhoneBookModel.edmx</DependentUpon>
+      <LastGenOutput>PhoneBookModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PhoneBookModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PhoneBookModel.edmx</DependentUpon>
       <LastGenOutput>PhoneBookModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
