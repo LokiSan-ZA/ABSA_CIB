@@ -167,6 +167,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneBookController.cs" />
+    <Compile Include="Controllers\PhoneBookEntriesController.cs" />
+    <Compile Include="Controllers\PhoneBooksController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +227,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\PhoneBooks\Create.cshtml" />
+    <Content Include="Views\PhoneBooks\Delete.cshtml" />
+    <Content Include="Views\PhoneBooks\Details.cshtml" />
+    <Content Include="Views\PhoneBooks\Edit.cshtml" />
+    <Content Include="Views\PhoneBooks\Index.cshtml" />
+    <Content Include="Views\PhoneBookEntries\Create.cshtml" />
+    <Content Include="Views\PhoneBookEntries\Delete.cshtml" />
+    <Content Include="Views\PhoneBookEntries\Details.cshtml" />
+    <Content Include="Views\PhoneBookEntries\Edit.cshtml" />
+    <Content Include="Views\PhoneBookEntries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

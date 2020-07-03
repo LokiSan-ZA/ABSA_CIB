@@ -13,7 +13,7 @@ namespace PhoneBookService.Models
         public DateTime? datemodified { get; set; }
         public int? active { get; set; }
 
-        //public ICollection<PhoneBookEntryViewModel> PhoneBookEntries { get; set; }
+        public ICollection<PhoneBookEntryViewModel> PhoneBookEntries { get; set; }
         
 
     }

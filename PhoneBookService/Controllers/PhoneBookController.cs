@@ -4,22 +4,43 @@ using System.Web.Http;
 using System.Collections.Generic;
 using PhoneBookDataAccess;
 using PhoneBookService.Models;
+using AutoMapper;
 
 namespace PhoneBookService.Controllers
 {
     public class PhoneBookController : ApiController
     {
-        public PhoneBookController() { }
+        
+        public PhoneBookController() {
+             
+
+        }
 
 
         #region Get / Select Data from PhoneBook or PhoneBookEntry
         public IHttpActionResult GetPhoneBooks(bool includeActive)
         {
             IList<PhoneBookViewModel> phoneBooks = null;
+            var dbToModelconfig = new MapperConfiguration(cfg => 
+            cfg.CreateMap<PhoneBook, PhoneBookViewModel>());
 
+            var mapper = new Mapper(dbToModelconfig);
             using (var pbEntities = new CIB_PhoneBookEntities())
             {
-                phoneBooks = pbEntities.PhoneBooks//.Include("PhoneBookEntries")
+                //var pbook = mapper.Map<PhoneBookViewModel>(pbEntities.PhoneBooks);
+                
+            }
+                
+                
+            
+
+            
+            
+            using (var pbEntities = new CIB_PhoneBookEntities())
+            {
+                
+
+                phoneBooks = pbEntities.PhoneBooks.Include("PhoneBookEntries")
                            .Select(pb => new PhoneBookViewModel()
                            {
                                phonebookid  = pb.phonebookid,
@@ -28,17 +49,13 @@ namespace PhoneBookService.Controllers
                                datemodified = pb.datemodified,
                                active       = pb.active,
                                }).ToList();
-                               /*PhoneBookEntries = new Lis
-                               {
-                                   phonebookid      = pb.PhoneBookEntries.ToList<,
-                                   phonebookentryid = pb.PhoneBookEntries.phonebookentryid,
-                                   name             = pb.PhoneBookEntries.name,
-                                   phonenumber      = pb.PhoneBookEntries.phonenumber,
-                                   datecreated      = pb.PhoneBookEntries.datecreated,
-                                   datemodified     = pb.PhoneBookEntries.datemodified,
-                                   active           = pb.PhoneBookEntries.active
+                               /*PhoneBookEntries = new List<PhoneBookEntry>().Add(new PhoneBookEntry() {
+
                                }
+                               
                            }).ToList<PhoneBookEntryViewModel>();*/
+
+                
             }
 
             if (phoneBooks.Count == 0)

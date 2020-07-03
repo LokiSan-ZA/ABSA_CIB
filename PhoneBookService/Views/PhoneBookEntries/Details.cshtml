@@ -1,0 +1,74 @@
+﻿@model PhoneBookDataAccess.PhoneBookEntry
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>PhoneBookEntry</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.phonenumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.phonenumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.datecreated)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.datecreated)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.datemodified)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.datemodified)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.active)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.active)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneBook.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhoneBook.name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.phonebookentryid }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
